@@ -52,11 +52,13 @@
 
         /*------Scroll area------*/
         .scrollableDiv {
-            height: 800px;
+            height: 700px;
             overflow-y: auto;
             float: left;
-            position: relative;
-            margin-left: -5px;
+            /* position: relative; */
+            /* margin-left: -5px; */
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         /*------Scroll area ends -----*/
@@ -106,14 +108,12 @@
                     </button>
                 </div>
                 <div class="header-block header-block-search">
-                    <form role="search">
-                        <div class="input-container">
-                            <i class="fa fa-search"></i>
-                            <input type="search" class="searchArea" placeholder="Search">
-                            <!-- <input type="hidden" id="hidden-field"> -->
-                            <div class="underline"></div>
-                        </div>
-                    </form>
+                    <div class="input-container">
+                        <i class="fa fa-search"></i>
+                        <input type="search" class="searchArea" placeholder="Search">
+                        <!-- <input type="hidden" id="hidden-field"> -->
+                        <div class="underline"></div>
+                    </div>
                 </div>
 
                 <div class="header-block header-block-nav">
@@ -181,6 +181,7 @@
                                 <div class="img"
                                     style="background-image: url(&#39;https://avatars3.githubusercontent.com/u/3959008?v=3&amp;s=40&#39;)">
                                 </div>
+                                <!-- user Name here -->
                                 <span id="user-name" class="name"> </span>
                             </a>
                             <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1"
@@ -219,164 +220,11 @@
                                 <a href="./mainPage.html">
                                     <i class="fa fa-home"></i> Dashboard </a>
                             </li>
-                            <!-- <li>
-                                    <a href="https://modularcode.io/modular-admin-html/index.html">
-                                        <i class="fa fa-th-large"></i> Items Manager
-                                        <i class="fa arrow"></i>
-                                    </a>
-                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/items-list.html"> Items List </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/item-editor.html"> Item Editor </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/index.html">
-                                        <i class="fa fa-area-chart"></i> Charts
-                                        <i class="fa arrow"></i>
-                                    </a>
-                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/charts-flot.html"> Flot Charts </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/charts-morris.html"> Morris Charts </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/index.html">
-                                        <i class="fa fa-table"></i> Tables
-                                        <i class="fa arrow"></i>
-                                    </a>
-                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/static-tables.html"> Static Tables </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/responsive-tables.html"> Responsive Tables </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/forms.html">
-                                        <i class="fa fa-pencil-square-o"></i> Forms </a>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/index.html">
-                                        <i class="fa fa-desktop"></i> UI Elements
-                                        <i class="fa arrow"></i>
-                                    </a>
-                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/buttons.html"> Buttons </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/cards.html"> Cards </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/typography.html"> Typography </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/icons.html"> Icons </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/grid.html"> Grid </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/index.html">
-                                        <i class="fa fa-file-text-o"></i> Pages
-                                        <i class="fa arrow"></i>
-                                    </a>
-                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/login.html"> Login </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/signup.html"> Sign Up </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/reset.html"> Reset </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/error-404.html"> Error 404 App </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/error-404-alt.html"> Error 404 Global </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/error-500.html"> Error 500 App </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/error-500-alt.html"> Error 500 Global </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/index.html">
-                                        <i class="fa fa-sitemap"></i> Menu Levels
-                                        <i class="fa arrow"></i>
-                                    </a>
-                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/index.html#"> Second Level Item
-                                                <i class="fa arrow"></i>
-                                            </a>
-                                            <ul class="sidebar-nav collapse" aria-expanded="false">
-                                                <li>
-                                                    <a href="https://modularcode.io/modular-admin-html/index.html#"> Third Level Item </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://modularcode.io/modular-admin-html/index.html#"> Third Level Item </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/index.html#"> Second Level Item </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/index.html#"> Second Level Item
-                                                <i class="fa arrow"></i>
-                                            </a>
-                                            <ul class="sidebar-nav collapse" aria-expanded="false">
-                                                <li>
-                                                    <a href="https://modularcode.io/modular-admin-html/index.html#"> Third Level Item </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://modularcode.io/modular-admin-html/index.html#"> Third Level Item </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://modularcode.io/modular-admin-html/index.html#"> Third Level Item
-                                                        <i class="fa arrow"></i>
-                                                    </a>
-                                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                                        <li>
-                                                            <a href="https://modularcode.io/modular-admin-html/index.html#"> Fourth Level Item </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="https://modularcode.io/modular-admin-html/index.html#"> Fourth Level Item </a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/screenful.html">
-                                        <i class="fa fa-bar-chart"></i> Agile Metrics
-                                        <span class="label label-screenful">by Screenful</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/modularcode/modular-admin-html">
-                                        <i class="fa fa-github-alt"></i> Theme Docs </a>
-                                </li>-->
+                            <li>
+                                <a href="./users.html">
+                                    <i class="fa fa-user"></i> Users
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -485,20 +333,62 @@
             <div class="mobile-menu-handle"></div>
             <article class="content dashboard-page">
                 <section class="section" id="schoolButtonArea">
-                    <div class="row sameheight-container">
+                    <!-- <div class="row sameheight-container">
                         <div class="col">
                             <div class="card sameheight-item items" data-exclude="xs,sm,lg" style="height: 400px;">
                                 <h2 id="totalResults">Showing </h2>
                                 <div class="card-header bordered">
                                     <div class="header-block scrollableDiv">
                                         <ul class="item-list striped" id="schoolList">
-                                            <!-- button list comes here -->
+                                             button list comes here
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+                    <article class="items-list-page">
+                        <div class="title-search-block">
+                            <div class="title-block fixed">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3 class="title"> Showing
+                                            <!-- //showing count comes here -->
+                                            <span id="showingCount"></span>
+                                            <!-- //Total count comes here -->
+                                            <span id="totalCount"></span>
+                                        </h3>
+                                        <p class="title-description" id="searchKey">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="items-search">
+                                <form class="form-inline">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control boxed rounded-s"
+                                            placeholder="Search for...">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-secondary rounded-s" type="button">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div> -->
+                        </div>
+                        <div class="card items">
+                            <ul class="item-list striped scrollableDiv" id="userList">
+
+                            </ul>
+                        </div>
+                        <nav class="text-right">
+                            <ul class="pagination">
+                                <!-- page number comes here -->
+                            </ul>
+                        </nav>
+                    </article>
                 </section>
                 <!-- School contained user profile -->
                 <section class="section" style="display: none;" id="userProfileArea">
@@ -524,7 +414,8 @@
                                         </div> -->
                                     </div>
                                 </div>
-                                <ul class="item-list striped" id="userList">
+                                <!-- old id="userList" -->
+                                <ul class="item-list striped">
                                     <!-- <li class="item space-profile">
                                         <div class="row item-row">
                                             <div class="col-sm-2 center"><img class="profile-img "
@@ -820,7 +711,8 @@
         integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script> -->
 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootpag/1.0.7/jquery.bootpag.min.js"></script>
     <script>
         $('.logout').click(function () {
             localStorage.clear();
@@ -889,7 +781,7 @@
                 "Scala",
                 "Scheme"
             ];
-            // Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwic2NvcGVzIjpbeyJhdXRob3JpdHkiOiJTVVBFUl9BRE1JTiJ9XSwidXNlciI6ImFiQGdtYWlsLmNvbSIsImlhdCI6MTU1ODE1NTY0MSwiZXhwIjoxNTU4MjQyMDQxfQ.qplMV-jX1fRlabNKVP0j0XmkduH8Lwn5AO6lDo2nE4tZlKzFRl4APGlyOZ7gjVWFZvrCvCODzCM6V3p5-MfHAw
+
             $(".searchArea").autocomplete({
                 source: function (request, response) {
                     $.ajax({
@@ -901,40 +793,108 @@
                         success: function (data) {
 
                             var suggesions = [];
-
                             $.each(data, function (key, college) {
                                 suggesions.push(college.collegeName);
                             });
-
                             response(suggesions);
                         }
                     });
                 },
                 change: function (event, ui) {
-                   
-                }, select: function (event, ui) {
-                    $.get(ip + "/search/getUsersFromSchoolName?schoolName=" + ui.item.label + "&page=0&size=10", function (data) {
-                        $('#schoolButtonArea').hide();
-                        $('#userProfileArea').show();
-                        var contentArray = data.content;
 
-                        $.each(contentArray, function (index, profile) {
-                            $('#userList').append(' <li class="item space-profile"> <div class="row item-row"> <div class="col-sm-2 center"><img class="profile-img " src="' + profile.imageUrl
-                                + '" alt="Avatar" style="width:200px"></div><div class="col-sm-10"> <h2>Aswin Rajkumar</h2> <div class="card-block stats"> <div class="row row-sm stats-container"> '
-                                + '<div class="col-12 col-sm-6 stat-col"> <div class="stat-icon"> <i class="fa fa-suitcase"></i> </div><div class="stat"> <div class="value"> Current Company '
-                                + '</div><div class="name"> ' + profile.currentCompany + ' </div></div><div class="progress stat-progress"> <div class="progress-bar" style="width: 100%;"></div></div></div>'
-                                + ' <div class="col-12 col-sm-6 stat-col"> <div class="stat-icon"> <i class="fa fa-wrench"></i> </div><div class="stat"> <div class="value"> Total Experience </div>'
-                                + '<div class="name"> ' + profile.totalExperience + ' Years </div></div><div class="progress stat-progress"> <div class="progress-bar" style="width: 100%;"></div></div></div>'
-                                + '<div class="col-12 col-sm-6 stat-col"> <div class="stat-icon"> <i class="fa fa-star"></i> </div><div class="stat"> <div class="value"> Position </div><div class="name">'
-                                + profile.position + ' </div></div><div class="progress stat-progress"> <div class="progress-bar" style="width: 100%;"></div></div></div><div class="col-12 col-sm-6 stat-col"> '
-                                + '<div class="stat-icon"> <i class="fa fa-location-arrow"></i> </div><div class="stat"> <div class="value"> Location </div><div class="name"> ' + profile.location + '</div></div>'
-                                + ' <div class="progress stat-progress"> <div class="progress-bar" style="width: 100%;"></div></div></div></div></div></div></div></li>');
-                        });
-                    });
-                },
+                }, select: function (event, ui) {
+                    //user list method comes here.
+                    $("#searchKey").html('Showing search result of <b style="color:red;">"' + ui.item.label + '"<b>')
+                    $('#userList').empty();
+                    getUserList(0, ui.item.label)
+                    localStorage.setItem("searchKey", ui.item.label);
+                }
             });
         });
 
+        $(".searchArea").blur(function () {
+            
+            var searchFieldValue = $(this).val();
+            if (searchFieldValue === "" || searchFieldValue === undefined || searchFieldValue === null) {
+                $('#userList').empty();
+                getUserList(0, "");
+            }
+        })
+
+        $(document).ready(function () {
+
+            $.ajaxSetup({
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem("token")
+                }
+            });
+
+            getUserList(0, "");
+
+            localStorage.setItem("searchKey", "");
+
+            $('.pagination').bootpag({
+                total: 5,          // total pages
+                page: 1,            // default page
+                maxVisible: 5,     // visible pagination
+                leaps: true,         // next/prev leaps through maxVisible
+                firstLastUse: true,
+                first: '←',
+                last: '→',
+                wrapClass: 'pagination',
+                activeClass: 'active',
+                disabledClass: 'disabled',
+                nextClass: 'next',
+                prevClass: 'prev',
+                lastClass: 'last',
+                firstClass: 'first'
+            }).on("page", function (event, num) {
+                $('#userList').empty();
+                var originalPageNumber = num - 1;
+                getUserList(originalPageNumber, localStorage.getItem("searchKey"));
+
+                // $("#content").html("Page " + num); // or some ajax content loading...
+                // // ... after content load -> change total to 10
+                $(this).bootpag({ total: localStorage.getItem("totalPages"), maxVisible: 5 });
+                $('.pagination a').addClass('page-link');
+                $('.pagination li').addClass('page-item');
+            });
+            $('.pagination a').addClass('page-link');
+            $('.pagination li').addClass('page-item');
+        });
+
+        function getUserList(pagenumber, searchKey) {
+
+            $.get(ip + "/search/getUsersFromSchoolName?schoolName=" + searchKey + "&page=" + pagenumber + "&size=10&sort=totalExperience,desc", function (data) {
+                // $('#schoolButtonArea').hide();
+                // $('#userProfileArea').show();
+
+                $('#showingCount').text(data.numberOfElements + " of");
+                $('#totalCount').text(data.totalElements);
+
+                var contentArray = data.content;
+
+                // console.log(data);
+                localStorage.setItem("totalPages", data.totalPages);
+
+                $.each(contentArray, function (index, profile) {
+                    $('#userList').append('<li class="item"> <div class="item-row"> <div class="item-col fixed item-col-check"> '
+                        + '<label class="item-check" id="select-all-items"> <input type="checkbox" class="checkbox"> <span></span> '
+                        + '  </label> </div><div class="item-col fixed pull-left item-col-title"> <div> <div class="row item-row"> '
+                        + '<div class="col-sm-2 center"><img class="profile-img " src="' + profile.imageUrl + '" alt="Avatar" style="width:200px">'
+                        + '</div><div class="col-sm-10"> <h2>' + profile.name + '</h2> <div class="card-block stats"> <div class="row row-sm stats-container"> '
+                        + '<div class="col-12 col-sm-6 stat-col"> <div class="stat-icon"> <i class="fa fa-suitcase"></i> </div><div class="stat"> '
+                        + '<div class="name"> ' + profile.currentCompany + ' </div></div><div class="progress stat-progress"> <div class="progress-bar" style="width: 100%;"> '
+                        + '</div></div></div><div class="col-12 col-sm-6 stat-col"> <div class="stat-icon"> <i class="fa fa-wrench"></i> </div><div class="stat"> '
+                        + '<div class="name"> ' + profile.totalExperience + ' Years </div></div><div class="progress stat-progress"> <div class="progress-bar" style="width: 100%;"> '
+                        + '</div></div></div><div class="col-12 col-sm-6 stat-col"> <div class="stat-icon"> <i class="fa fa-star"></i> </div><div class="stat"> '
+                        + '<div class="name"> ' + profile.position + ' </div></div><div class="progress stat-progress"> <div class="progress-bar" style="width: 100%;"> </div>'
+                        + '</div></div><div class="col-12 col-sm-6 stat-col"> <div class="stat-icon"> <i class="fa fa-location-arrow"></i> </div>'
+                        + '<div class="stat"> <div class="name"> ' + profile.location + ' </div></div><div class="progress stat-progress"> '
+                        + '<div class="progress-bar" style="width: 100%;"> </div></div></div></div></div></div></div></div></div></div></li>');
+                });
+            });
+        }
 
     </script>
 
