@@ -47,13 +47,65 @@
             font: 10px arial, san serif;
             text-align: left;
         }
+
+        /* sphere for status */
+
+        .redsphere {
+            background-color: red;
+            box-shadow: inset -10px -10px 100px rgb(238, 92, 92), 10px 10px 20px rgb(238, 92, 92), inset 0px 0px 10px rgb(238, 92, 92);
+        }
+
+        .greensphere {
+            background-color: #85CE36;
+            box-shadow: inset -10px -10px 100px rgb(181, 243, 80), 10px 10px 20px rgb(190, 248, 55), inset 0px 0px 10px rgb(190, 248, 55);
+        }
+
+        .sphere {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 500%;
+            position: relative;
+
+            display: inline-block;
+            margin: 5%;
+        }
+
+        .sphere::after {
+            background-color: rgba(255, 255, 255, 0.3);
+            content: '';
+            height: 45%;
+            width: 12%;
+            position: absolute;
+            top: 4%;
+            left: 15%;
+            border-radius: 50%;
+            transform: rotate(40deg);
+        }
+
+        /* sphere for status */
+
+        /*------Scroll area------*/
+        .scrollableDiv {
+            max-height: 700px;
+            overflow-y: auto;
+            float: left;
+            /* position: relative; */
+            /* margin-left: -5px; */
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /*------Scroll area ends -----*/
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <body data-gr-c-s-loaded="true" class="loaded">
     <div class="main-wrapper">
-        <div class="app" id="app">
+        <div class="app sidebar-fixed" id="app">
             <header class="header">
                 <div class="header-block header-block-collapse d-lg-none d-xl-none">
                     <button class="collapse-btn" id="sidebar-collapse-btn">
@@ -193,280 +245,36 @@
                                     <i class="fa fa-user"></i> Users
                                 </a>
                             </li>
-                            <!-- <li>
-                                    <a href="https://modularcode.io/modular-admin-html/items-list.html">
-                                        <i class="fa fa-area-chart"></i> Charts
-                                        <i class="fa arrow"></i>
-                                    </a>
-                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/charts-flot.html"> Flot Charts </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/charts-morris.html"> Morris Charts </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/items-list.html">
-                                        <i class="fa fa-table"></i> Tables
-                                        <i class="fa arrow"></i>
-                                    </a>
-                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/static-tables.html"> Static Tables </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/responsive-tables.html"> Responsive Tables </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/forms.html">
-                                        <i class="fa fa-pencil-square-o"></i> Forms </a>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/items-list.html">
-                                        <i class="fa fa-desktop"></i> UI Elements
-                                        <i class="fa arrow"></i>
-                                    </a>
-                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/buttons.html"> Buttons </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/cards.html"> Cards </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/typography.html"> Typography </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/icons.html"> Icons </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/grid.html"> Grid </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/items-list.html">
-                                        <i class="fa fa-file-text-o"></i> Pages
-                                        <i class="fa arrow"></i>
-                                    </a>
-                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/login.html"> Login </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/signup.html"> Sign Up </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/reset.html"> Reset </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/error-404.html"> Error 404 App </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/error-404-alt.html"> Error 404 Global </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/error-500.html"> Error 500 App </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/error-500-alt.html"> Error 500 Global </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/items-list.html">
-                                        <i class="fa fa-sitemap"></i> Menu Levels
-                                        <i class="fa arrow"></i>
-                                    </a>
-                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/items-list.html#"> Second Level Item
-                                                <i class="fa arrow"></i>
-                                            </a>
-                                            <ul class="sidebar-nav collapse" aria-expanded="false">
-                                                <li>
-                                                    <a href="https://modularcode.io/modular-admin-html/items-list.html#"> Third Level Item </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://modularcode.io/modular-admin-html/items-list.html#"> Third Level Item </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/items-list.html#"> Second Level Item </a>
-                                        </li>
-                                        <li>
-                                            <a href="https://modularcode.io/modular-admin-html/items-list.html#"> Second Level Item
-                                                <i class="fa arrow"></i>
-                                            </a>
-                                            <ul class="sidebar-nav collapse" aria-expanded="false">
-                                                <li>
-                                                    <a href="https://modularcode.io/modular-admin-html/items-list.html#"> Third Level Item </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://modularcode.io/modular-admin-html/items-list.html#"> Third Level Item </a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://modularcode.io/modular-admin-html/items-list.html#"> Third Level Item
-                                                        <i class="fa arrow"></i>
-                                                    </a>
-                                                    <ul class="sidebar-nav collapse" aria-expanded="false">
-                                                        <li>
-                                                            <a href="https://modularcode.io/modular-admin-html/items-list.html#"> Fourth Level Item </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="https://modularcode.io/modular-admin-html/items-list.html#"> Fourth Level Item </a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="https://modularcode.io/modular-admin-html/screenful.html">
-                                        <i class="fa fa-bar-chart"></i> Agile Metrics
-                                        <span class="label label-screenful">by Screenful</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/modularcode/modular-admin-html">
-                                        <i class="fa fa-github-alt"></i> Theme Docs </a>
-                                </li> -->
                         </ul>
                     </nav>
                 </div>
-                <footer class="sidebar-footer">
-                    <ul class="sidebar-menu metismenu" id="customize-menu">
-                        <li>
-                            <ul aria-expanded="false" class="collapse">
-                                <li class="customize">
-                                    <div class="customize-item">
-                                        <div class="row customize-header">
-                                            <div class="col-4"> </div>
-                                            <div class="col-4">
-                                                <label class="title">fixed</label>
-                                            </div>
-                                            <div class="col-4">
-                                                <label class="title">static</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <label class="title">Sidebar:</label>
-                                            </div>
-                                            <div class="col-4">
-                                                <label>
-                                                    <input class="radio" type="radio" name="sidebarPosition"
-                                                        value="sidebar-fixed">
-                                                    <span></span>
-                                                </label>
-                                            </div>
-                                            <div class="col-4">
-                                                <label>
-                                                    <input class="radio" type="radio" name="sidebarPosition" value="">
-                                                    <span></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <label class="title">Header:</label>
-                                            </div>
-                                            <div class="col-4">
-                                                <label>
-                                                    <input class="radio" type="radio" name="headerPosition"
-                                                        value="header-fixed">
-                                                    <span></span>
-                                                </label>
-                                            </div>
-                                            <div class="col-4">
-                                                <label>
-                                                    <input class="radio" type="radio" name="headerPosition" value="">
-                                                    <span></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <label class="title">Footer:</label>
-                                            </div>
-                                            <div class="col-4">
-                                                <label>
-                                                    <input class="radio" type="radio" name="footerPosition"
-                                                        value="footer-fixed">
-                                                    <span></span>
-                                                </label>
-                                            </div>
-                                            <div class="col-4">
-                                                <label>
-                                                    <input class="radio" type="radio" name="footerPosition" value="">
-                                                    <span></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="customize-item">
-                                        <ul class="customize-colors">
-                                            <li>
-                                                <span class="color-item color-red" data-theme="red"></span>
-                                            </li>
-                                            <li>
-                                                <span class="color-item color-orange" data-theme="orange"></span>
-                                            </li>
-                                            <li>
-                                                <span class="color-item color-green" data-theme=""></span>
-                                            </li>
-                                            <li>
-                                                <span class="color-item color-seagreen" data-theme="seagreen"></span>
-                                            </li>
-                                            <li>
-                                                <span class="color-item color-blue" data-theme="blue"></span>
-                                            </li>
-                                            <li>
-                                                <span class="color-item color-purple" data-theme="purple"></span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                            <a href="https://modularcode.io/modular-admin-html/items-list.html">
-                                <i class="fa fa-cog"></i> Customize </a>
-                        </li>
-                    </ul>
-                </footer>
+
             </aside>
             <div class="sidebar-overlay" id="sidebar-overlay"></div>
             <div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
             <div class="mobile-menu-handle"></div>
-            <article class="content items-list-page">
+
+            <article class="items-list-page content dashboard-page">
                 <div class="title-search-block">
                     <div class="title-block">
                         <div class="row">
                             <div class="col-md-6">
-                                <h3 class="title"> Items
-                                    <a href="https://modularcode.io/modular-admin-html/item-editor.html"
-                                        class="btn btn-primary btn-sm rounded-s"> Add New </a>
+                                <h3 class="title"> Users
+                                    <!-- <a href="item-editor.html" class="btn btn-primary btn-sm rounded-s"> Add New </a> -->
                                     <!--
-				 -->
-                                    <div class="action dropdown">
+             -->
+                                    <!-- <div class="action dropdown">
                                         <button class="btn  btn-sm rounded-s btn-secondary dropdown-toggle"
                                             type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false"> More actions... </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                            <a class="dropdown-item"
-                                                href="https://modularcode.io/modular-admin-html/items-list.html#">
+                                            <a class="dropdown-item" href="#">
                                                 <i class="fa fa-pencil-square-o icon"></i>Mark as a draft</a>
-                                            <a class="dropdown-item"
-                                                href="https://modularcode.io/modular-admin-html/items-list.html#"
-                                                data-toggle="modal" data-target="#confirm-modal">
+                                            <a class="dropdown-item" href="#" data-toggle="modal"
+                                                data-target="#confirm-modal">
                                                 <i class="fa fa-close icon"></i>Delete</a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </h3>
                                 <p class="title-description"> List of sample items - e.g. books, movies, events, etc...
                                 </p>
@@ -476,18 +284,14 @@
                     <div class="items-search">
                         <form class="form-inline">
                             <div class="input-group">
-                                <input type="text" class="form-control boxed rounded-s" placeholder="Search for...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-secondary rounded-s" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
+                                <button type="button" class="btn btn-primary btn-sm rounded-s" ><i class="fa fa-plus" aria-hidden="true"></i> Add User </button>
+                               
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="card items">
-                    <ul class="item-list striped">
+                    <ul class="item-list striped scrollableDiv" id="userList">
                         <li class="item item-list-header">
                             <div class="item-row">
                                 <div class="item-col fixed item-col-check">
@@ -496,11 +300,11 @@
                                         <span></span>
                                     </label>
                                 </div>
-                                <div class="item-col item-col-header fixed item-col-img md">
+                                <!-- <div class="item-col item-col-header fixed item-col-img md">
                                     <div>
                                         <span>Media</span>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="item-col item-col-header item-col-title">
                                     <div>
                                         <span>Name</span>
@@ -508,27 +312,17 @@
                                 </div>
                                 <div class="item-col item-col-header item-col-sales">
                                     <div>
-                                        <span>Sales</span>
+                                        <span>Email</span>
                                     </div>
                                 </div>
                                 <div class="item-col item-col-header item-col-stats">
                                     <div class="no-overflow">
-                                        <span>Stats</span>
+                                        <span>Status</span>
                                     </div>
                                 </div>
                                 <div class="item-col item-col-header item-col-category">
                                     <div class="no-overflow">
-                                        <span>Category</span>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-header item-col-author">
-                                    <div class="no-overflow">
-                                        <span>Author</span>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-header item-col-date">
-                                    <div>
-                                        <span>Published</span>
+                                        <span>Registered on</span>
                                     </div>
                                 </div>
                                 <div class="item-col item-col-header fixed item-col-actions-dropdown"> </div>
@@ -542,50 +336,36 @@
                                         <span></span>
                                     </label>
                                 </div>
-                                <div class="item-col fixed item-col-img md">
-                                    <a href="https://modularcode.io/modular-admin-html/item-editor.html">
+                                <!-- <div class="item-col fixed item-col-img md">
+                                    <a href="item-editor.html">
                                         <div class="item-img rounded"
                                             style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg)">
                                         </div>
                                     </a>
-                                </div>
+                                </div> -->
                                 <div class="item-col fixed pull-left item-col-title">
                                     <div class="item-heading">Name</div>
                                     <div>
-                                        <a href="https://modularcode.io/modular-admin-html/item-editor.html" class="">
-                                            <h4 class="item-title"> 12 Myths Uncovered About IT &amp; Software </h4>
+                                        <a href="item-editor.html" class="">
+                                            <h4 class="item-title"> VIGIL </h4>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="item-col item-col-sales">
-                                    <div class="item-heading">Sales</div>
-                                    <div> 46323 </div>
+                                    <div class="item-heading">Email</div>
+                                    <div> ab@gmail.com </div>
                                 </div>
                                 <div class="item-col item-col-stats no-overflow">
-                                    <div class="item-heading">Stats</div>
+                                    <div class="item-heading">Status</div>
                                     <div class="no-overflow">
-                                        <div class="item-stats sparkline" data-type="bar"><canvas width="84"
-                                                height="390625"
-                                                style="display: inline-block; width: 84px; height: 390625px; vertical-align: top;"></canvas>
-                                        </div>
+                                        <div class="sphere redsphere"></div>
                                     </div>
                                 </div>
                                 <div class="item-col item-col-category no-overflow">
-                                    <div class="item-heading">Category</div>
+                                    <div class="item-heading">Registered on</div>
                                     <div class="no-overflow">
-                                        <a href="https://modularcode.io/modular-admin-html/items-list.html">Software</a>
+                                        <a href="">Software</a>
                                     </div>
-                                </div>
-                                <div class="item-col item-col-author">
-                                    <div class="item-heading">Author</div>
-                                    <div class="no-overflow">
-                                        <a href="https://modularcode.io/modular-admin-html/items-list.html">Meadow
-                                            Katheryne</a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-date">
-                                    <div class="item-heading">Published</div>
-                                    <div class="no-overflow"> 21 SEP 10:45 </div>
                                 </div>
                                 <div class="item-col fixed item-col-actions-dropdown">
                                     <div class="item-actions-dropdown">
@@ -600,439 +380,13 @@
                                         <div class="item-actions-block">
                                             <ul class="item-actions-list">
                                                 <li>
-                                                    <a class="remove"
-                                                        href="https://modularcode.io/modular-admin-html/items-list.html#"
-                                                        data-toggle="modal" data-target="#confirm-modal">
+                                                    <a class="remove" href="#" data-toggle="modal"
+                                                        data-target="#confirm-modal">
                                                         <i class="fa fa-trash-o "></i>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="edit"
-                                                        href="https://modularcode.io/modular-admin-html/item-editor.html">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <div class="item-row">
-                                <div class="item-col fixed item-col-check">
-                                    <label class="item-check" id="select-all-items">
-                                        <input type="checkbox" class="checkbox">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                <div class="item-col fixed item-col-img md">
-                                    <a href="https://modularcode.io/modular-admin-html/item-editor.html">
-                                        <div class="item-img rounded"
-                                            style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg)">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item-col fixed pull-left item-col-title">
-                                    <div class="item-heading">Name</div>
-                                    <div>
-                                        <a href="https://modularcode.io/modular-admin-html/item-editor.html" class="">
-                                            <h4 class="item-title"> 50% of things doesn't really belongs to you </h4>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-sales">
-                                    <div class="item-heading">Sales</div>
-                                    <div> 4567 </div>
-                                </div>
-                                <div class="item-col item-col-stats no-overflow">
-                                    <div class="item-heading">Stats</div>
-                                    <div class="no-overflow">
-                                        <div class="item-stats sparkline" data-type="bar"><canvas width="84"
-                                                height="390625"
-                                                style="display: inline-block; width: 84px; height: 390625px; vertical-align: top;"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-category no-overflow">
-                                    <div class="item-heading">Category</div>
-                                    <div class="no-overflow">
-                                        <a href="https://modularcode.io/modular-admin-html/items-list.html">Hardware</a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-author">
-                                    <div class="item-heading">Author</div>
-                                    <div class="no-overflow">
-                                        <a href="https://modularcode.io/modular-admin-html/items-list.html">Alexander
-                                            Sargssyan</a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-date">
-                                    <div class="item-heading">Published</div>
-                                    <div class="no-overflow"> 21 SEP 10:45 </div>
-                                </div>
-                                <div class="item-col fixed item-col-actions-dropdown">
-                                    <div class="item-actions-dropdown">
-                                        <a class="item-actions-toggle-btn">
-                                            <span class="inactive">
-                                                <i class="fa fa-cog"></i>
-                                            </span>
-                                            <span class="active">
-                                                <i class="fa fa-chevron-circle-right"></i>
-                                            </span>
-                                        </a>
-                                        <div class="item-actions-block">
-                                            <ul class="item-actions-list">
-                                                <li>
-                                                    <a class="remove"
-                                                        href="https://modularcode.io/modular-admin-html/items-list.html#"
-                                                        data-toggle="modal" data-target="#confirm-modal">
-                                                        <i class="fa fa-trash-o "></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="edit"
-                                                        href="https://modularcode.io/modular-admin-html/item-editor.html">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <div class="item-row">
-                                <div class="item-col fixed item-col-check">
-                                    <label class="item-check" id="select-all-items">
-                                        <input type="checkbox" class="checkbox">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                <div class="item-col fixed item-col-img md">
-                                    <a href="https://modularcode.io/modular-admin-html/item-editor.html">
-                                        <div class="item-img rounded"
-                                            style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/eduardo_olv/128.jpg)">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item-col fixed pull-left item-col-title">
-                                    <div class="item-heading">Name</div>
-                                    <div>
-                                        <a href="https://modularcode.io/modular-admin-html/item-editor.html" class="">
-                                            <h4 class="item-title"> Vestibulum tincidunt amet laoreet mauris sit sem
-                                                aliquam cras maecenas vel aliquam. </h4>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-sales">
-                                    <div class="item-heading">Sales</div>
-                                    <div> 854 </div>
-                                </div>
-                                <div class="item-col item-col-stats no-overflow">
-                                    <div class="item-heading">Stats</div>
-                                    <div class="no-overflow">
-                                        <div class="item-stats sparkline" data-type="bar"><canvas width="84"
-                                                height="390625"
-                                                style="display: inline-block; width: 84px; height: 390625px; vertical-align: top;"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-category no-overflow">
-                                    <div class="item-heading">Category</div>
-                                    <div class="no-overflow">
-                                        <a href="https://modularcode.io/modular-admin-html/items-list.html">Anywhere</a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-author">
-                                    <div class="item-heading">Author</div>
-                                    <div class="no-overflow">
-                                        <a href="https://modularcode.io/modular-admin-html/items-list.html">Some Long
-                                            Author Name</a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-date">
-                                    <div class="item-heading">Published</div>
-                                    <div class="no-overflow"> 21 SEP 10:45 </div>
-                                </div>
-                                <div class="item-col fixed item-col-actions-dropdown">
-                                    <div class="item-actions-dropdown">
-                                        <a class="item-actions-toggle-btn">
-                                            <span class="inactive">
-                                                <i class="fa fa-cog"></i>
-                                            </span>
-                                            <span class="active">
-                                                <i class="fa fa-chevron-circle-right"></i>
-                                            </span>
-                                        </a>
-                                        <div class="item-actions-block">
-                                            <ul class="item-actions-list">
-                                                <li>
-                                                    <a class="remove"
-                                                        href="https://modularcode.io/modular-admin-html/items-list.html#"
-                                                        data-toggle="modal" data-target="#confirm-modal">
-                                                        <i class="fa fa-trash-o "></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="edit"
-                                                        href="https://modularcode.io/modular-admin-html/item-editor.html">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <div class="item-row">
-                                <div class="item-col fixed item-col-check">
-                                    <label class="item-check" id="select-all-items">
-                                        <input type="checkbox" class="checkbox">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                <div class="item-col fixed item-col-img md">
-                                    <a href="https://modularcode.io/modular-admin-html/item-editor.html">
-                                        <div class="item-img rounded"
-                                            style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/why_this/128.jpg)">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item-col fixed pull-left item-col-title">
-                                    <div class="item-heading">Name</div>
-                                    <div>
-                                        <a href="https://modularcode.io/modular-admin-html/item-editor.html" class="">
-                                            <h4 class="item-title"> Lorem Ipsum is not simply random text </h4>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-sales">
-                                    <div class="item-heading">Sales</div>
-                                    <div> 1861 </div>
-                                </div>
-                                <div class="item-col item-col-stats no-overflow">
-                                    <div class="item-heading">Stats</div>
-                                    <div class="no-overflow">
-                                        <div class="item-stats sparkline" data-type="bar"><canvas width="84"
-                                                height="390625"
-                                                style="display: inline-block; width: 84px; height: 390625px; vertical-align: top;"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-category no-overflow">
-                                    <div class="item-heading">Category</div>
-                                    <div class="no-overflow">
-                                        <a
-                                            href="https://modularcode.io/modular-admin-html/items-list.html">Something</a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-author">
-                                    <div class="item-heading">Author</div>
-                                    <div class="no-overflow">
-                                        <a href="https://modularcode.io/modular-admin-html/items-list.html">Willard
-                                            Bennett</a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-date">
-                                    <div class="item-heading">Published</div>
-                                    <div class="no-overflow"> 21 SEP 10:45 </div>
-                                </div>
-                                <div class="item-col fixed item-col-actions-dropdown">
-                                    <div class="item-actions-dropdown">
-                                        <a class="item-actions-toggle-btn">
-                                            <span class="inactive">
-                                                <i class="fa fa-cog"></i>
-                                            </span>
-                                            <span class="active">
-                                                <i class="fa fa-chevron-circle-right"></i>
-                                            </span>
-                                        </a>
-                                        <div class="item-actions-block">
-                                            <ul class="item-actions-list">
-                                                <li>
-                                                    <a class="remove"
-                                                        href="https://modularcode.io/modular-admin-html/items-list.html#"
-                                                        data-toggle="modal" data-target="#confirm-modal">
-                                                        <i class="fa fa-trash-o "></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="edit"
-                                                        href="https://modularcode.io/modular-admin-html/item-editor.html">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <div class="item-row">
-                                <div class="item-col fixed item-col-check">
-                                    <label class="item-check" id="select-all-items">
-                                        <input type="checkbox" class="checkbox">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                <div class="item-col fixed item-col-img md">
-                                    <a href="https://modularcode.io/modular-admin-html/item-editor.html">
-                                        <div class="item-img rounded"
-                                            style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/w7download/128.jpg)">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item-col fixed pull-left item-col-title">
-                                    <div class="item-heading">Name</div>
-                                    <div>
-                                        <a href="https://modularcode.io/modular-admin-html/item-editor.html" class="">
-                                            <h4 class="item-title"> Ut dui quis amet curabitur vestibulum </h4>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-sales">
-                                    <div class="item-heading">Sales</div>
-                                    <div> 7891 </div>
-                                </div>
-                                <div class="item-col item-col-stats no-overflow">
-                                    <div class="item-heading">Stats</div>
-                                    <div class="no-overflow">
-                                        <div class="item-stats sparkline" data-type="bar"><canvas width="84"
-                                                height="390625"
-                                                style="display: inline-block; width: 84px; height: 390625px; vertical-align: top;"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-category no-overflow">
-                                    <div class="item-heading">Category</div>
-                                    <div class="no-overflow">
-                                        <a href="https://modularcode.io/modular-admin-html/items-list.html">Something
-                                            Else</a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-author">
-                                    <div class="item-heading">Author</div>
-                                    <div class="no-overflow">
-                                        <a href="https://modularcode.io/modular-admin-html/items-list.html">Ivy
-                                            Lorrie</a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-date">
-                                    <div class="item-heading">Published</div>
-                                    <div class="no-overflow"> 21 SEP 10:45 </div>
-                                </div>
-                                <div class="item-col fixed item-col-actions-dropdown">
-                                    <div class="item-actions-dropdown">
-                                        <a class="item-actions-toggle-btn">
-                                            <span class="inactive">
-                                                <i class="fa fa-cog"></i>
-                                            </span>
-                                            <span class="active">
-                                                <i class="fa fa-chevron-circle-right"></i>
-                                            </span>
-                                        </a>
-                                        <div class="item-actions-block">
-                                            <ul class="item-actions-list">
-                                                <li>
-                                                    <a class="remove"
-                                                        href="https://modularcode.io/modular-admin-html/items-list.html#"
-                                                        data-toggle="modal" data-target="#confirm-modal">
-                                                        <i class="fa fa-trash-o "></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="edit"
-                                                        href="https://modularcode.io/modular-admin-html/item-editor.html">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <div class="item-row">
-                                <div class="item-col fixed item-col-check">
-                                    <label class="item-check" id="select-all-items">
-                                        <input type="checkbox" class="checkbox">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                <div class="item-col fixed item-col-img md">
-                                    <a href="https://modularcode.io/modular-admin-html/item-editor.html">
-                                        <div class="item-img rounded"
-                                            style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/pankogut/128.jpg)">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item-col fixed pull-left item-col-title">
-                                    <div class="item-heading">Name</div>
-                                    <div>
-                                        <a href="https://modularcode.io/modular-admin-html/item-editor.html" class="">
-                                            <h4 class="item-title"> Mus sociosqu etiam autem rutrum at molestie elit
-                                                pulvinar </h4>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-sales">
-                                    <div class="item-heading">Sales</div>
-                                    <div> 95150 </div>
-                                </div>
-                                <div class="item-col item-col-stats no-overflow">
-                                    <div class="item-heading">Stats</div>
-                                    <div class="no-overflow">
-                                        <div class="item-stats sparkline" data-type="bar"><canvas width="84"
-                                                height="390625"
-                                                style="display: inline-block; width: 84px; height: 390625px; vertical-align: top;"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-category no-overflow">
-                                    <div class="item-heading">Category</div>
-                                    <div class="no-overflow">
-                                        <a href="https://modularcode.io/modular-admin-html/items-list.html">Other</a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-author">
-                                    <div class="item-heading">Author</div>
-                                    <div class="no-overflow">
-                                        <a href="https://modularcode.io/modular-admin-html/items-list.html">Evander
-                                            Archie</a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-date">
-                                    <div class="item-heading">Published</div>
-                                    <div class="no-overflow"> 21 SEP 10:45 </div>
-                                </div>
-                                <div class="item-col fixed item-col-actions-dropdown">
-                                    <div class="item-actions-dropdown">
-                                        <a class="item-actions-toggle-btn">
-                                            <span class="inactive">
-                                                <i class="fa fa-cog"></i>
-                                            </span>
-                                            <span class="active">
-                                                <i class="fa fa-chevron-circle-right"></i>
-                                            </span>
-                                        </a>
-                                        <div class="item-actions-block">
-                                            <ul class="item-actions-list">
-                                                <li>
-                                                    <a class="remove"
-                                                        href="https://modularcode.io/modular-admin-html/items-list.html#"
-                                                        data-toggle="modal" data-target="#confirm-modal">
-                                                        <i class="fa fa-trash-o "></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="edit"
-                                                        href="https://modularcode.io/modular-admin-html/item-editor.html">
+                                                    <a class="edit" href="item-editor.html">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
                                                 </li>
@@ -1046,50 +400,59 @@
                 </div>
                 <nav class="text-right">
                     <ul class="pagination">
-                        <!-- <li class="page-item">
-                            <a class="page-link" href="https://modularcode.io/modular-admin-html/items-list.html"> Prev
-                            </a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="https://modularcode.io/modular-admin-html/items-list.html"> 1
-                            </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="https://modularcode.io/modular-admin-html/items-list.html"> 2
-                            </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="https://modularcode.io/modular-admin-html/items-list.html"> 3
-                            </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="https://modularcode.io/modular-admin-html/items-list.html"> 4
-                            </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="https://modularcode.io/modular-admin-html/items-list.html"> 5
-                            </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="https://modularcode.io/modular-admin-html/items-list.html"> Next
-                            </a>
-                        </li> -->
+                        <!-- page number comes here -->
                     </ul>
                 </nav>
             </article>
+            </section>
+            <!-- School contained user profile -->
+            <section class="section" style="display: none;" id="userProfileArea">
+                <div class="row sameheight-container">
+                    <div class="col-xl-12">
+                        <div class="card sameheight-item items" data-exclude="xs,sm,lg" style="height: 400px;">
+                            <div class="card-header bordered">
+                                <div class="header-block">
+                                    <h3 class="title"> Items </h3>
+                                    <a href="item-editor.html" class="btn btn-primary btn-sm"> Add new </a>
+                                </div>
+                                <div class="header-block pull-right">
+                                    <label class="search">
+                                        <input class="search-input" placeholder="search...">
+                                        <i class="fa fa-search search-icon"></i>
+                                    </label>
+                                    <div class="pagination">
+                                        <a href="" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-angle-up"></i>
+                                        </a>
+                                        <a href="" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-angle-down"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- old id="userList" -->
+                            <ul class="item-list striped">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </article>
+
+
             <footer class="footer">
                 <div class="footer-block buttons">
-                    <iframe class="footer-github-btn" src="./users_files/github-btn.html" frameborder="0" scrolling="0"
-                        width="140px" height="20px"></iframe>
+
                 </div>
                 <div class="footer-block author">
                     <ul>
-                        <li> created by
-                            <a href="https://github.com/modularcode">ModularCode</a>
+                        <li> Developed By
+                            <a href="#">OpnLabs</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="https://github.com/modularcode/modular-admin-html#get-in-touch">get in touch</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </footer>

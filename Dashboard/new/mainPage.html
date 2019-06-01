@@ -52,7 +52,7 @@
 
         /*------Scroll area------*/
         .scrollableDiv {
-            height: 700px;
+            max-height: 700px;
             overflow-y: auto;
             float: left;
             /* position: relative; */
@@ -95,12 +95,14 @@
         }
 
         /*--------------- autocomplete styling -----------------------*/
+
+
     </style>
 </head>
 
 <body data-gr-c-s-loaded="true" class="loaded">
     <div class="main-wrapper">
-        <div class="app" id="app">
+        <div class="app sidebar-fixed" id="app">
             <header class="header">
                 <div class="header-block header-block-collapse d-lg-none d-xl-none">
                     <button class="collapse-btn" id="sidebar-collapse-btn">
@@ -380,7 +382,32 @@
                         </div>
                         <div class="card items">
                             <ul class="item-list striped scrollableDiv" id="userList">
+                                <li class="item">
+                                    <div class="item-row">
+                                        <div class="item-col fixed item-col-check">
+                                            <!-- <label class="item-check" id="select-all-items">
+                                                <input type="checkbox" class="checkbox">
+                                                <span></span>
+                                            </label>
+                                        </div>
+                                        <div class="item-col fixed item-col-img md">
+                                            <a href="item-editor.html">
+                                                <div class="item-img rounded" style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/brad_frost/128.jpg)"></div>
+                                            </a>
+                                        </div>
+                                        <div class="item-col fixed item-col-title">
+                                            <div class="item-heading">Name</div>
+                                            <div>
+                                                <a href="item-editor.html" class="">
+                                                    <h4 class="item-title"> 12 Myths Uncovered About IT &amp; Software </h4>
+                                                </a>
+                                            </div>
+                                        </div> -->
 
+                                        
+                                       
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                         <nav class="text-right">
@@ -615,60 +642,7 @@
             <footer class="footer">
 
             </footer>
-            <div class="modal fade" id="modal-media">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Media Library</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                                <span class="sr-only">Close</span>
-                            </button>
-                        </div>
-                        <div class="modal-body modal-tab-container">
-                            <ul class="nav nav-tabs modal-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link"
-                                        href="https://modularcode.io/modular-admin-html/index.html#gallery"
-                                        data-toggle="tab" role="tab">Gallery</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active"
-                                        href="https://modularcode.io/modular-admin-html/index.html#upload"
-                                        data-toggle="tab" role="tab">Upload</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content modal-tab-content">
-                                <div class="tab-pane fade" id="gallery" role="tabpanel">
-                                    <div class="images-container">
-                                        <div class="row"> </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade active in" id="upload" role="tabpanel">
-                                    <div class="upload-container">
-                                        <div id="dropzone">
-                                            <form action="https://modularcode.io/" method="POST"
-                                                enctype="multipart/form-data" class="dropzone needsclick dz-clickable"
-                                                id="demo-upload">
-                                                <div class="dz-message-block">
-                                                    <div class="dz-message needsclick"> Drop files here or click to
-                                                        upload. </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Insert Selected</button>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
+
             <!-- /.modal -->
             <div class="modal fade" id="confirm-modal">
                 <div class="modal-dialog" role="document">
