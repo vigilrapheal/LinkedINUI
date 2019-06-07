@@ -22,7 +22,10 @@
     <link rel="stylesheet" href="./matcherDiff_files/bootstrap.min.css">
     <script type="text/javascript" src="./matcherDiff_files/jquery.dropdown.js"></script>
 
-    <title>Text Compare! - An online diff tool that can find the difference between two texts</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <title>Data Suggestor</title>
 
 
 
@@ -1275,39 +1278,169 @@
             max-width: 100%;
             overflow-x: hidden;
         }
+
+        em {
+            background-color: yellow;
+        }
+
+        .whiteColor {
+            color: white;
+        }
+
+        .rightAllign {
+            float: right;
+        }
+
+        .loader i {
+            position: relative;
+            display: inline-block;
+            margin: 0 4px;
+            width: 5px;
+            height: 15px;
+            border-radius: 2px;
+            border: solid #690;
+            border-width: 0 1px 1px 0;
+            background: #9b2;
+            animation: tilt infinite 5s cubic-bezier(0.955, -0.010, 1.000, 1.000);
+            transform-origin: 100% 100%;
+        }
+
+        .loader i::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            bottom: 0;
+            display: block;
+            width: 5px;
+            height: 5px;
+            background: transparent;
+            box-shadow: 0 2px rgba(0, 0, 0, .3);
+            animation: stretch infinite 5s cubic-bezier(0.955, -0.010, 1.000, 1.000);
+            opacity: 0;
+            transform-origin: 0% 0%;
+        }
+
+        .loader i:nth-child(2),
+        .loader i:nth-child(2)::before {
+            animation-delay: .3s;
+        }
+
+        .loader i:nth-child(3),
+        .loader i:nth-child(3)::before {
+            animation-delay: .6s;
+        }
+
+        .loader i:nth-child(4),
+        .loader i:nth-child(4)::before {
+            animation-delay: .9s;
+        }
+
+        .loader i:nth-child(5),
+        .loader i:nth-child(5)::before {
+            animation-delay: 1.2s;
+        }
+
+        .loader i:last-of-type {
+            animation-name: tilt-last;
+        }
+
+        .loader i:last-of-type::before {
+            animation-name: stretch-last;
+        }
+
+        @keyframes tilt {
+            10% {
+                transform: rotate(70deg)
+            }
+
+            60% {
+                transform: rotate(70deg)
+            }
+
+            70% {
+                transform: rotate(0deg)
+            }
+        }
+
+        @keyframes tilt-last {
+            10% {
+                transform: rotate(90deg)
+            }
+
+            60% {
+                transform: rotate(90deg)
+            }
+
+            70% {
+                transform: rotate(0deg)
+            }
+        }
+
+        @keyframes stretch {
+            10% {
+                transform: rotate(-70deg);
+                width: 10px;
+                opacity: 1;
+                left: 0px;
+                bottom: -1px;
+            }
+
+            60% {
+                transform: rotate(-70deg);
+                width: 10px;
+                opacity: 1;
+            }
+
+            70% {
+                width: 5px;
+                transform: rotate(0deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes stretch-last {
+            10% {
+                transform: rotate(-90deg);
+                width: 10px;
+                height: 2px;
+                opacity: .5;
+                left: 3px;
+                bottom: -1px;
+            }
+
+            60% {
+                transform: rotate(-90deg);
+                width: 10px;
+                height: 2px;
+                opacity: .5;
+            }
+
+            70% {
+                transform: rotate(0deg);
+                width: 5px;
+                height: 5px;
+                opacity: 0;
+            }
+        }
+
+        .loader {
+            position: relative;
+            display: block;
+            margin: auto;
+            padding: 0;
+            width: 100px;
+            height: 15px;
+            text-align: center;
+            /* width: 100px;
+            height: 100px; */
+            margin-top: 50%;
+        }
     </style>
 
 </head>
 
 <body data-gr-c-s-loaded="true" style="zoom: 1;">
-    <grammarly-extension class="_1KJtL" style="position: absolute; top: 0px; left: 0px; pointer-events: none;">
-        <div data-grammarly-part="highlights" class="u_fNK" style="position: absolute; top: 0px; left: 0px;">
-            <div
-                style="box-sizing: content-box; top: 183px; left: 17.6406px; width: 907.922px; height: 344px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;">
-                <div style="position: absolute; top: 0px; left: 0px;">
-                    <div style="height: 1400px; width: 2765px;"></div>
-                    <div style="position: absolute; top: 0px; left: 0px; height: 1400px; width: 2765px;"></div>
-                </div>
-            </div>
-        </div>
-        <div data-grammarly-part="button" class="u_fNK" style="position: absolute; top: 0px; left: 0px;">
-            <div
-                style="box-sizing: content-box; top: 183px; left: 17.6406px; width: 907.922px; height: 344px; position: relative; pointer-events: none; overflow: hidden; border: 0px; border-radius: 0px; padding: 0px; margin: 0px;">
-                <div
-                    style="position: absolute; transform: translate(-100%, -100%); top: 336px; left: 899.922px; width: auto; height: auto; pointer-events: all;">
-                    <div style="display: flex; flex-direction: row;">
-                        <div>
-                            <div class="_5WizN _37oOc _1QzSN">
-                                <div class="_3YmQx">
-                                    <div title="Protected by Grammarly" class="_3QdKe">&nbsp;</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </grammarly-extension>
+
 
     <div class="logo">
         <div class="logo_background">
@@ -1328,14 +1461,17 @@
                 <textarea name="text2" cols="80" rows="20" class="inputText" id="inputText2"
                     onfocus="this.value=&#39;&#39;; this.onfocus=null;"></textarea> -->
 
-            <div class="row">
+            <div class="row" id="college">
                 <div class="column-col1" style="background-color:rgb(230, 228, 228);">
                     <h2>College List</h2>
                     <div class="list-group scrollable" id="collegeList">
                         <!-- <a href="#" data-value="1" class="list-group-item clgList active">First item</a>
                         <a href="#" data-value="2" class="list-group-item clgList">Second item</a>
                         <a href="#" data-value="3" class="list-group-item clgList">Third item</a> -->
-
+                    </div>
+                    <div class="loader">
+                        <i></i><i></i><i></i><i></i><i></i>
+                        <p>Please Wait...</p>
                     </div>
                 </div>
                 <div class="column-col2" style="background-color: rgb(223, 219, 219);">
@@ -1348,14 +1484,41 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row" id="company" style="display: none">
+                <div class="column-col1" style="background-color:rgb(230, 228, 228);">
+                    <h2>Company List</h2>
+                    <div class="list-group scrollable" id="companyList">
+                        <!-- <a href="#" data-value="1" class="list-group-item clgList active">First item</a>
+                        <a href="#" data-value="2" class="list-group-item clgList">Second item</a>
+                        <a href="#" data-value="3" class="list-group-item clgList">Third item</a> -->
+
+                    </div>
+                    <div class="loader">
+                        <i></i><i></i><i></i><i></i><i></i>
+                        <p>Please Wait...</p>
+                    </div>
+                </div>
+                <div class="column-col2" style="background-color: rgb(223, 219, 219);">
+                    <h2 id=companyHead></h2>
+                    <div class="list-group scrollable" id="companyShowResult" style="display: none">
+                        <!-- //result area -->
+                    </div>
+                    <div id="companynoResult">
+                        <p class="text-center" style="color: red">No matches found !!!</p>
+                    </div>
+
+                </div>
+            </div>
+
             <table>
                 <tbody>
                     <tr>
                         <td width="48%" class="extraOptionsLeft">
-                            <button type="button" class="btn btn-default"
+                            <button type="button" class="btn btn-default" id="companyButton"
                                 data-dropdown="#dropdown_edit_text">Company</button>
-                            <button type="button" class="btn btn-default" id="switchButton">College</button>
-                            <button type="button" class="btn btn-default" id="switchButton" disabled>Course</button>
+                            <button type="button" class="btn btn-default" id="collegeButton">College</button>
+                            <button type="button" class="btn btn-default" id="courseButton" disabled>Course</button>
                         </td>
                         <td width="4%">
                             <button id="compareButton" class="g-recaptcha compareButton btn btn-success">
@@ -1377,69 +1540,210 @@
 
         var ip = 'http://localhost:8009';
 
-        localStorage.setItem("college","");
+        var doOnce = true;
 
-        $.get(ip + '/getAllCollegeList', function (response) {
-            var bucketDetails = JSON.parse(response);
-
-            $.each(bucketDetails, function (key, data) {
-                // $('#collegeList').append(' <a href="javascript:showMatchList()" data-value="' + data.key + '" class="list-group-item clgList">' + data.key + '</a>');
-
-                $('#collegeList').append($("<a>").attr("href", "#").attr("data-value", data.key).html(data.key).addClass("list-group-item").addClass("clgList"));
-            });
-            $('.clgList').click(function () {
-                $('#showResult').empty();
-                $("#collegeList a").removeClass("active");
-                localStorage.setItem("college",$(this).data("value"));
-                $(this).addClass("active");
-                $.get(ip + "/getMatchedColleges?collegeName=" + $(this).data("value"), function (response) {
-                    var matchedCollegeList = JSON.parse(response);
-
-                    if (matchedCollegeList.data !== undefined) {
-                        $('#noResult').hide();
-                        $('#showResult').show();
-                        $('#collegeHead').html('<span>' + matchedCollegeList.totalDocs + '</span> Matched Colleges')
-                    }
-                    else {
-                        $('#noResult').show();
-                        $('#showResult').hide();
-                        $('#collegeHead').html('<span>0</span> Matched Colleges')
-                    }
-
-                    $.each(matchedCollegeList.data, function (key, data) {
-                        // <span style="float: left;"><input type="checkbox" name="bla" id="bla"></span>
-                        $('#showResult').append($('<p>').html('<span style="float: left;"><input style="max-width:100%" type="checkbox" value="' + data + '" name="matched" ></span> ' + data).addClass("list-group-item"));
-                    });
-                })
-            })
+        $(function () {
+            $('#collegeButton').click();
         });
+
+        localStorage.setItem("college", "");
+        localStorage.setItem("company", "");
+
+        // $.get(ip + '/getAllCollegeList', function (response) {
+        //     var bucketDetails = JSON.parse(response);
+
+        //     $.each(bucketDetails, function (key, data) {
+        //         // $('#collegeList').append(' <a href="javascript:showMatchList()" data-value="' + data.key + '" class="list-group-item clgList">' + data.key + '</a>');
+
+        //         $('#collegeList').append($("<a>").attr("href", "#").attr("data-value", data.key).html(data.key).addClass("list-group-item").addClass("clgList"));
+        //     });
+        //     $('.clgList').click(function () {
+        //         $('#showResult').empty();
+        //         $("#collegeList a").removeClass("active");
+        //         localStorage.setItem("college", $(this).data("value"));
+        //         $(this).addClass("active");
+        //         $.get(ip + "/getMatchedColleges?collegeName=" + $(this).data("value"), function (response) {
+        //             var matchedCollegeList = JSON.parse(response);
+
+        //             if (matchedCollegeList.data !== undefined) {
+        //                 $('#noResult').hide();
+        //                 $('#showResult').show();
+        //                 $('#collegeHead').html('<span>' + matchedCollegeList.totalDocs + '</span> Matched Colleges')
+        //             }
+        //             else {
+        //                 $('#noResult').show();
+        //                 $('#showResult').hide();
+        //                 $('#collegeHead').html('<span>0</span> Matched Colleges')
+        //             }
+
+        //             $.each(matchedCollegeList.data, function (key, data) {
+        //                 // <span style="float: left;"><input type="checkbox" name="bla" id="bla"></span>
+        //                 $('#showResult').append($('<p>').html('<span style="float: left;"><input style="max-width:100%" type="checkbox" value="' + data + '" name="matched" ></span> ' + data).addClass("list-group-item"));
+        //             });
+        //         })
+        //     })
+        // });
+
+        // ------------------ map name with similar list ----------------
 
         $('#compareButton').click(function () {
 
             var similarList = [];
 
-            $("#showResult input:checkbox[name=matched]:checked").each(function () {
-                similarList.push($(this).val());
-            });
+            var endpoint = "";
 
-            var requestBody = {
-                "instituteName": localStorage.getItem("college"),
-                "similarList":similarList
+            var requestBody;
+
+            if ($("#college").is(':visible')) {
+                endpoint = '/insertToCollegeMapper';
+                $("#showResult input:checkbox[name=matched]:checked").each(function () {
+                    similarList.push($(this).val());
+                });
+                requestBody = {
+                    "instituteName": localStorage.getItem("college"),
+                    "similarList": similarList
+                }
+            } else {
+                endpoint = '/insertToCompanyMapper';
+                $("#companyShowResult input:checkbox[name=matched]:checked").each(function () {
+                    similarList.push($(this).val());
+                });
+                requestBody = {
+                    "companyName": localStorage.getItem("company"),
+                    "similarList": similarList
+                }
             }
 
-            
-
             $.ajax({
-                url: ip + '/insertToCollegeMapper',
+                url: ip + endpoint,
                 data: JSON.stringify(requestBody),
                 type: "PUT",
                 contentType: "application/json",
                 dataType: "json",
                 success: function (response) {
-                    console.log(response);
+                    $("#showResult input:checkbox[name=matched]:checked").each(function () {
+                        $(this).closest('p').remove();
+                    });
+                    $("#companyShowResult input:checkbox[name=matched]:checked").each(function () {
+                        $(this).closest('p').remove();
+                    });
+                    alert("Mapping Completed");
+                },
+                error: function (e) {
+                    alert("Error In Mapping !!")
                 }
             })
         });
+
+        //----------- company button clicked and action followed by it -------------
+        $('#companyButton').click(function () {
+
+            if ($("#company").is(':visible')) {
+                return;
+            }
+
+            $('#companyShowResult').empty();
+            $('#companyList').empty();
+
+            $('#company').show();
+            $('#college').hide();
+
+            $.get(ip + '/getAllCompanyList', function (response) {
+                var bucketDetails = JSON.parse(response);
+
+                $.each(bucketDetails, function (key, data) {
+                    // $('#collegeList').append(' <a href="javascript:showMatchList()" data-value="' + data.key + '" class="list-group-item clgList">' + data.key + '</a>');
+
+                    $('#companyList').append($("<a>").attr("href", "#").attr("data-value", data.key).html(data.key).addClass("list-group-item").addClass("cmpList"));
+                });
+                $('.cmpList').click(function () {
+                    $('a').find("i").remove();
+                    $(this).append('<i class="fa fa-circle-o-notch fa-spin fa-fw rightAllign whiteColor"></i>');
+                    $("#companyList a").removeClass("active");
+                    $('#companyShowResult').empty();
+                    localStorage.setItem("company", $(this).data("value"));
+                    $(this).addClass("active");
+                    $.get(ip + "/getMatchedCompanies?companyName=" + $(this).data("value"), function (response) {
+                        $(this).find('i').remove();
+                        var matchedCompanyList = JSON.parse(response);
+
+                        if (matchedCompanyList.data !== undefined) {
+                            $('#companynoResult').hide();
+                            $('#companyShowResult').show();
+                            $('#companyHead').html('<span>' + matchedCompanyList.totalDocs + '</span> Matched Colleges')
+                        }
+                        else {
+                            $('#companynoResult').show();
+                            $('#companyShowResult').hide();
+                            $('#companyHead').html('<span>0</span> Matched Companies')
+                        }
+
+                        $.each(matchedCompanyList.data, function (key, data) {
+                            // <span style="float: left;"><input type="checkbox" name="bla" id="bla"></span>
+                            $('#companyShowResult').append($('<p>').html('<span style="float: left;"><input style="max-width:100%" type="checkbox" value="' + data.replace(/<em>|<\/em>/gi, '') + '" name="matched" ></span> ' + data).addClass("list-group-item"));
+                        });
+                    })
+                })
+            });
+
+
+        });
+
+        // ----------------- college button clicked and action followed by it --------------------------
+        $('#collegeButton').click(function () {
+
+            if ($("#college").is(':visible') && !doOnce) {
+                doOnce = false
+                return;
+            }
+            doOnce = false;
+            $('#showResult').empty();
+            $('#collegeList').empty();
+
+            $('#company').hide();
+            $('#college').show();
+
+            $.get(ip + '/getAllCollegeList', function (response) {
+                var bucketDetails = JSON.parse(response);
+
+                $.each(bucketDetails, function (key, data) {
+                    // $('#collegeList').append(' <a href="javascript:showMatchList()" data-value="' + data.key + '" class="list-group-item clgList">' + data.key + '</a>');
+
+                    $('#collegeList').append($("<a>").attr("href", "#").attr("data-value", data.key).html(data.key).addClass("list-group-item").addClass("clgList"));
+                });
+                $('.clgList').click(function () {
+                    $('a').find("i").remove();
+                    $(this).append('<i class="fa fa-circle-o-notch fa-spin fa-fw rightAllign whiteColor"></i>');
+                    $("#collegeList a").removeClass("active");
+                    $('#showResult').empty();
+                    localStorage.setItem("college", $(this).data("value"));
+                    $(this).addClass("active");
+                    $.get(ip + "/getMatchedColleges?collegeName=" + $(this).data("value"), function (response) {
+                        $("a").find('i').remove();
+                        var matchedCollegeList = JSON.parse(response);
+
+                        if (matchedCollegeList.data !== undefined) {
+                            $('#noResult').hide();
+                            $('#showResult').show();
+                            $('#collegeHead').html('<span>' + matchedCollegeList.totalDocs + '</span> Matched Colleges')
+                        }
+                        else {
+                            $('#noResult').show();
+                            $('#showResult').hide();
+                            $('#collegeHead').html('<span>0</span> Matched Colleges')
+                        }
+
+                        $.each(matchedCollegeList.data, function (key, data) {
+                            // <span style="float: left;"><input type="checkbox" name="bla" id="bla"></span>
+                            $('#showResult').append($('<p>').html('<span style="float: left;"><input style="max-width:100%" type="checkbox" value="' + data.replace(/<em>|<\/em>/gi, '') + '" name="matched" ></span> ' + data).addClass("list-group-item"));
+                        });
+                    })
+                })
+            });
+        });
+
+
+
     });
 </script>
 
