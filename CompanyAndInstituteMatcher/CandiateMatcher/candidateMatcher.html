@@ -1809,7 +1809,7 @@
 
                     $('#showMatchedResult').append('<div class="container"> <div class="block-about two bg-grey-2" id="somedata1">' +
                         ' <div class="block-title"> <h2 class="title">Personal Info</h2> </div><ul class="mt-40 info" id="naukri-personalDetails">' +
-                        ' <li><span>Name</span> : ' + data.name + '</li><li><span>Total Experience</span> : ' + data.totalExperience + ' yrs</li><li><span>Location</span> ' +
+                        ' <li><span><input type="radio" name="matched" id="matched" value="'+data.id+'">Name</span> : ' + data.name + '</li><li><span>Total Experience</span> : ' + data.totalExperience + ' yrs</li><li><span>Location</span> ' +
                         ': ' + data.location + '</li>' +
                         '<li><span>NaukriId</span> : ' + data.id + '</li></ul> </div><div class="block-content" id="naukri-candidate">' +
                         ' <div class="col-md-4 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> <div class="block-icon">' +
@@ -1822,7 +1822,14 @@
         }
 
         $("#compareButton").click(function () {
-
+            var linkedinId = localStorage.getItem("elasticId");
+            
+            $("#showMatchedResult input[name=matched]:checked").each(function () {
+                var naukriId=$(this).val();
+                $.get(ip+"/saveMatchedCandidate?naukriid="+naukriId+"&linkedinid="+linkedinId,function(response){
+                    alert("success");
+                });
+            });
         });
 
 
