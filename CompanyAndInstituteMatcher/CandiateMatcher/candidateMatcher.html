@@ -687,7 +687,6 @@
             height: 20px;
             padding: 0;
             margin: 0;
-            background-image: url(//s7.addthis.com/static/t00/pinit00.png);
             background-repeat: no-repeat
         }
 
@@ -1442,6 +1441,21 @@
             height: 100px; */
             margin-top: 50%;
         }
+
+        .radio {
+            display: inline-block;
+            cursor: pointer;
+            margin: 2px 0;
+        }
+
+        .radio.selected {
+            border-color: blue;
+        }
+
+        .resume-boxe{
+            background-color: whitesmoke
+        }
+        
     </style>
 
     <link rel="stylesheet" media="all" href="./Difference - CV_RESUME TEMPLATE Preview - ThemeForest_files/base.css">
@@ -1455,7 +1469,7 @@
 
     <div class="logo">
         <div class="logo_background">
-            <a id="logo" href="https://text-compare.com/">Data Mapper!</a>
+            <a id="logo" href="#">Data Mapper!</a>
         </div>
     </div>
 
@@ -1499,10 +1513,10 @@
 
 
                     </div>
-                    <div class="loader">
+                    <!-- <div class="loader">
                         <i></i><i></i><i></i><i></i><i></i>
                         <p>Please Wait...</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="column-col2" style="background-color: rgb(223, 219, 219);">
                     <div class="list-group scrollable" id="showMatchedResult" style="display: block">
@@ -1667,9 +1681,19 @@
 <script>
     $(document).ready(function () {
 
-        var ip = 'http://localhost:8009';
-
+        var ip = 'http://192.168.100.16:8009';
         var doOnce = true;
+
+
+        $('[name="matched"]').click(function () {
+            // $(this).parent().find('.radio').removeClass('selected');
+            // $(this).addClass('selected');
+            // var val = $(this).attr('data-value');
+            // //alert(val);
+            // $(this).parent().find('input').val(val);
+
+            $(this).parent().find('.block-about').css("background-color", "blue");
+        });
 
         // $(function () {
         //     $('#collegeButton').click();
@@ -1682,7 +1706,46 @@
 
 
 
-        $.get(ip + '/getAllCandidateList?page=0&size=1&sort=_id', function (response) {
+        $.get(ip + '/getMatchedProfileFromOpnCvProfile?page=0&size=1&sort=id', function (response) {
+
+            // var pageNumber = localStorage.getItem("currentPage");
+            // $('#page-number').val(pageNumber);
+
+            // $('#linkedin-personalDetails').append('<li><span>Name</span> : ' + response.content[0].name + '</li>');
+            // $('#linkedin-personalDetails').append('<li><span>Total Experience</span> : ' + response.content[0].totalExperience + ' yrs</li>');
+            // $('#linkedin-personalDetails').append('<li><span>Location</span> : ' + response.content[0].location + '</li>');
+            // $('#linkedin-personalDetails').append('<li><span>ProfileUrl</span> : ' + response.content[0].profileUrl + '</li>');
+            // $('#linkedin-personalDetails').append('<li><span>ElasticId</span> : ' + response.content[0].id + '</li>');
+
+            // localStorage.setItem("elasticId", response.content[0].id);
+
+            // var exp = "";
+
+            // if (response.content[0].experience !== null)
+            //     $.each(response.content[0].experience, function (key, data) {
+            //         exp = exp + '<div class="exp"><div class="hgroup mb-5"><h2>' + data.company + '</h2><h4>' + data.jobTitle + '</h4> <h6>' + data.experience + '</h6> </div></div>';
+            //     });
+
+            // var edu = "";
+
+            // if (response.content[0].education !== null)
+            //     $.each(response.content[0].education, function (key, data) {
+            //         edu += '<div class="edu"> <div class="hgroup mb-5"> <h2>' + data.university + '</h2><h4>' + data.degree + '</h4><h6>' + data.year + '</h6>' +
+            //             '</div></div>'
+            //     });
+
+
+
+
+
+            // $("#linkedin-candidate").append('<div class="col-md-6 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> ' +
+            //     '<div class="block-icon"><i class="ic-toolbox"></i></div><div class="block-title"> <h3 class="title medium">Expertise</h3>' +
+            //     ' </div><div class="timeline mt-40">' + exp + '</div></div></div>' +
+
+            //     '<div class="col-md-6 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> <div class="block-icon"><i class="ic-pencil"></i></div>' +
+            //     '<div class="block-title"> <h3 class="title medium">Education</h3> </div><div class="timeline mt-40">' +
+            //     edu + '</div></div></div>');
+            // getNaukriData(response.content[0].id);
 
             var pageNumber = localStorage.getItem("currentPage");
             $('#page-number').val(pageNumber);
@@ -1714,14 +1777,14 @@
 
 
 
-            $("#linkedin-candidate").append('<div class="col-md-4 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> ' +
+            $("#linkedin-candidate").append('<div class="col-md-6 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> ' +
                 '<div class="block-icon"><i class="ic-toolbox"></i></div><div class="block-title"> <h3 class="title medium">Expertise</h3>' +
                 ' </div><div class="timeline mt-40">' + exp + '</div></div></div>' +
 
-                '<div class="col-md-4 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> <div class="block-icon"><i class="ic-pencil"></i></div>' +
+                '<div class="col-md-6 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> <div class="block-icon"><i class="ic-pencil"></i></div>' +
                 '<div class="block-title"> <h3 class="title medium">Education</h3> </div><div class="timeline mt-40">' +
                 edu + '</div></div></div>');
-            getNaukriData(response.content[0].id);
+            getNaukriData(response.content[1]);
 
         });
 
@@ -1748,7 +1811,7 @@
 
             var pageNumber = localStorage.getItem("currentPage");
 
-            $.get(ip + '/getAllCandidateList?page=' + pageNumber + '&size=1&sort=_id', function (response) {
+            $.get(ip + '/getMatchedProfileFromOpnCvProfile?page=' + pageNumber + '&size=1&sort=id', function (response) {
 
                 $('#page-number').val(pageNumber);
 
@@ -1778,55 +1841,87 @@
 
 
 
-                $("#linkedin-candidate").append('<div class="col-md-4 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> ' +
+                $("#linkedin-candidate").append('<div class="col-md-6 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> ' +
                     '<div class="block-icon"><i class="ic-toolbox"></i></div><div class="block-title"> <h3 class="title medium">Expertise</h3>' +
                     ' </div><div class="timeline mt-40">' + exp + '</div></div></div>' +
 
-                    '<div class="col-md-4 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> <div class="block-icon"><i class="ic-pencil"></i></div>' +
+                    '<div class="col-md-6 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> <div class="block-icon"><i class="ic-pencil"></i></div>' +
                     '<div class="block-title"> <h3 class="title medium">Education</h3> </div><div class="timeline mt-40">' +
                     edu + '</div></div></div>');
-                getNaukriData(response.content[0].id);
+                getNaukriData(response.content[1]);
 
             });
         }
 
-
-        function getNaukriData(id) {
-            $.get(ip + '/getMatchedNaukriCandidateList?id=' + id, function (response) {
-                $.each(response, function (key, data) {
+        function getNaukriData(naukridata) {
+            // $.get(ip + '/getMatchedNaukriCandidateList?id=' + id, function (response) {
+                // $.each(response, function (key, data) {
                     var exp = "";
-                    if (data.experience !== null)
-                        $.each(data.experience, function (key, expdata) {
+                    if (naukridata.experience !== null)
+                        $.each(naukridata.experience, function (key, expdata) {
                             exp = exp + '<div class="exp"><div class="hgroup mb-5"><h2>' + expdata.company + '</h2><h4>' + expdata.jobTitle + '</h4> </div></div>';
                         });
 
                     var edu = "";
-                    if (data.education !== null)
-                        $.each(data.education, function (key, edudata) {
+                    if (naukridata.education !== null)
+                        $.each(naukridata.education, function (key, edudata) {
                             edu += '<div class="edu"> <div class="hgroup mb-5"> <h2>' + edudata.university + '</h2><h4>' + edudata.degree + '</h4><h6>' + edudata.completedYear + '</h6>' +
                                 '</div></div>'
                         });
 
                     $('#showMatchedResult').append('<div class="container"> <div class="block-about two bg-grey-2" id="somedata1">' +
                         ' <div class="block-title"> <h2 class="title">Personal Info</h2> </div><ul class="mt-40 info" id="naukri-personalDetails">' +
-                        ' <li><span><input type="radio" name="matched" id="matched" value="'+data.id+'">Name</span> : ' + data.name + '</li><li><span>Total Experience</span> : ' + data.totalExperience + ' yrs</li><li><span>Location</span> ' +
-                        ': ' + data.location + '</li>' +
-                        '<li><span>NaukriId</span> : ' + data.id + '</li></ul> </div><div class="block-content" id="naukri-candidate">' +
-                        ' <div class="col-md-4 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> <div class="block-icon">' +
+                        ' <li><span>Name</span> : ' + naukridata.name + '</li><li><span>Total Experience</span> : ' + naukridata.totalExperience + ' yrs</li><li><span>Location</span> ' +
+                        ': ' + naukridata.location + '</li>' +
+                        '<li><span>NaukriId</span> : ' + naukridata.id + '</li><li><span></span><input type="radio" name="matched" id="matched" style="float: left;position: absolute;" value="' + naukridata.id + '"></li></ul>' +
+                        ' </div><div class="block-content" id="naukri-candidate">' +
+                        ' <div class="col-md-6 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> <div class="block-icon">' +
                         '<i class="ic-toolbox"></i></div><div class="block-title"> <h3 class="title medium">Expertise</h3> </div><div class="timeline mt-40">' + exp +
-                        '</div></div></div><div class="col-md-4 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> ' +
+                        '</div></div></div><div class="col-md-6 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> ' +
                         '<div class="block-icon"><i class="ic-pencil"></i></div><div class="block-title"> <h3 class="title medium">' +
                         'Education</h3> </div><div class="timeline mt-40">' + edu + '</div> </div></div></div></div><hr> <br>');
-                });
-            });
+                // });
+            // });
         }
+
+
+        // function getNaukriData(id) {
+        //     $.get(ip + '/getMatchedNaukriCandidateList?id=' + id, function (response) {
+        //         $.each(response, function (key, data) {
+        //             var exp = "";
+        //             if (data.experience !== null)
+        //                 $.each(data.experience, function (key, expdata) {
+        //                     exp = exp + '<div class="exp"><div class="hgroup mb-5"><h2>' + expdata.company + '</h2><h4>' + expdata.jobTitle + '</h4> </div></div>';
+        //                 });
+
+        //             var edu = "";
+        //             if (data.education !== null)
+        //                 $.each(data.education, function (key, edudata) {
+        //                     edu += '<div class="edu"> <div class="hgroup mb-5"> <h2>' + edudata.university + '</h2><h4>' + edudata.degree + '</h4><h6>' + edudata.completedYear + '</h6>' +
+        //                         '</div></div>'
+        //                 });
+
+        //             $('#showMatchedResult').append('<div class="container"> <div class="block-about two bg-grey-2" id="somedata1">' +
+        //                 ' <div class="block-title"> <h2 class="title">Personal Info</h2> </div><ul class="mt-40 info" id="naukri-personalDetails">' +
+        //                 ' <li><span>Name</span> : ' + data.name + '</li><li><span>Total Experience</span> : ' + data.totalExperience + ' yrs</li><li><span>Location</span> ' +
+        //                 ': ' + data.location + '</li>' +
+        //                 '<li><span>NaukriId</span> : ' + data.id + '</li><li><span></span><input type="radio" name="matched" id="matched" style="float: left;position: absolute;" value="' + data.id + '"></li></ul>' +
+        //                 ' </div><div class="block-content" id="naukri-candidate">' +
+        //                 ' <div class="col-md-6 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> <div class="block-icon">' +
+        //                 '<i class="ic-toolbox"></i></div><div class="block-title"> <h3 class="title medium">Expertise</h3> </div><div class="timeline mt-40">' + exp +
+        //                 '</div></div></div><div class="col-md-6 col-sm-6 resume-boxe masonry"> <div class="inner-resume-boxe"> ' +
+        //                 '<div class="block-icon"><i class="ic-pencil"></i></div><div class="block-title"> <h3 class="title medium">' +
+        //                 'Education</h3> </div><div class="timeline mt-40">' + edu + '</div> </div></div></div></div><hr> <br>');
+        //         });
+        //     });
+        // }
 
         $("#compareButton").click(function () {
             var linkedinId = localStorage.getItem("elasticId");
-            
+
             $("#showMatchedResult input[name=matched]:checked").each(function () {
-                var naukriId=$(this).val();
-                $.get(ip+"/saveMatchedCandidate?naukriid="+naukriId+"&linkedinid="+linkedinId,function(response){
+                var naukriId = $(this).val();
+                $.get(ip + "/saveMatchedCandidate?naukriid=" + naukriId + "&linkedinid=" + linkedinId, function (response) {
                     alert("success");
                 });
             });

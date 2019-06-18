@@ -1725,7 +1725,7 @@ ul.latest-post a i {
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) and (orientation: portrait) {
 	
 	
-	input, textarea{-webkit-appearance: none;-webkit-border-radius:0;}
+	input, textarea{-webkit-border-radius:0;}
 	.block-background-image{background-attachment: scroll;background-position:top center !important;}
 	.img-profile img{left:-15px}
 	.menu li a{padding:22px 15px 20px;}
@@ -1751,7 +1751,7 @@ ul.latest-post a i {
 
 @media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) and (orientation: landscape) {
 	
-	input, textarea{-webkit-appearance: none;-webkit-border-radius:0;}
+	input, textarea{-webkit-border-radius:0;}
 	.block-background-image{background-attachment: scroll;background-position:top center !important;}
 	.styler{display: none !important;}
 	
@@ -1759,7 +1759,7 @@ ul.latest-post a i {
 
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-	input, textarea{-webkit-appearance: none;-webkit-border-radius:0;}
+	input, textarea{-webkit-border-radius:0;}
 	.block-background-image{background-attachment: scroll;background-position:top center !important;}
 	.img-profile img{left:-15px}
 	.menu li a{padding:22px 15px 20px;}
@@ -1786,7 +1786,7 @@ ul.latest-post a i {
 
 @media only screen and (min-width: 768px) and (max-width: 959px){
 	
-	input, textarea{-webkit-appearance: none;-webkit-border-radius:0;}
+	input, textarea{-webkit-border-radius:0;}
 	.block-background-image{background-attachment: scroll;background-position:top center !important;}
 	p.short-email{top:0;}
 	.img-profile img, .menu li a i{display:none;}
@@ -1832,7 +1832,7 @@ ul.latest-post a i {
 
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-	input, textarea{-webkit-appearance: none;-webkit-border-radius:0;}
+	input, textarea{-webkit-border-radius:0;}
 	.block-background-image{background-attachment: scroll;background-position:top center !important;}
 	body{font-size: 13px;}
 	.block-teaser h1{font-size:40px;}
@@ -1898,7 +1898,7 @@ ul.latest-post a i {
 
 
 @media only screen and (max-width:479px) {
-	input, textarea{-webkit-appearance: none;-webkit-border-radius:0;}
+	input, textarea{-webkit-border-radius:0;}
 	.block-background-image{background-attachment: scroll;background-position:top center !important;}
 	.block-teaser h1{font-size:40px;}
 	h2.title{font-size:28px;}
